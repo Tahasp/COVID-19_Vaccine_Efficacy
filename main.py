@@ -47,14 +47,14 @@ def load_real_data(cases_data: str) -> dict[datetime, int]:
 def run_computations_ontario() -> dict[datetime, int]:
     """Return a dictionary, mapping the date to the estimated number of cases in the fully
     vaccinated population based on the vaccine efficacy formula."""
-    file = load_cases_data('proj_data - ONTARIO.csv')
+    file = load_cases_data('proj_data_ONTARIO.csv')
     return calculate_cases_in_fully_vaxx(file, 'Ontario')
 
 
 def run_computations_nova_scotia() -> dict[datetime, int]:
     """Return a dictionary, mapping the date to the estimated number of cases in the fully
     vaccinated population based on the vaccine efficacy formula."""
-    file = load_cases_data('proj_data - NOVA SCOTIA.csv')
+    file = load_cases_data('proj_data_NOVA_SCOTIA.csv')
     return calculate_cases_in_fully_vaxx(file, 'Nova Scotia')
 
 
@@ -74,7 +74,7 @@ def run_ontario_graph() -> None:
     plt.fill_between(x_values, y_values, alpha=0.50, color='navy')
 
     # Coordinates based off of real life data
-    real_coords = load_real_data('proj_data - ONTARIO.csv')
+    real_coords = load_real_data('proj_data_ONTARIO.csv')
     real_x_values = real_coords.keys()  # dates
     real_y_values = real_coords.values()  # actual cases in fully vaxx people
 
@@ -113,7 +113,7 @@ def run_nova_scotia_graph() -> None:
     plt.fill_between(x_values, y_values, alpha=0.70, color='orange')
 
     # Coordinates based off of real life data
-    real_coords = load_real_data('proj_data - NOVA SCOTIA.csv')
+    real_coords = load_real_data('proj_data_NOVA_SCOTIA.csv')
     real_x_values = real_coords.keys()  # dates
     real_y_values = real_coords.values()  # actual cases in fully vaxx people
 
